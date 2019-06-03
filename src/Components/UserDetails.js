@@ -5,7 +5,6 @@ import TextField from "material-ui/TextField";
 import RaisedButton from "material-ui/RaisedButton";
 
 class UserDetails extends Component {
-
   continue = e => {
     e.preventDefault();
     this.props.nextStep();
@@ -16,7 +15,7 @@ class UserDetails extends Component {
     return (
       <MuiThemeProvider>
         <React.Fragment>
-          <AppBar title="Enter User Details" />
+          <AppBar title="Enter User Details" showMenuIconButton={false} />
           <TextField
             hintText="Enter Your First Name"
             floatingLabelText="First Name"
@@ -45,7 +44,12 @@ class UserDetails extends Component {
             defaultValue={values.email}
           />
           <br />
-          <RaisedButton label="Continue" primary={true} style={styles.btn} onClick={this.continue}/>
+          <RaisedButton
+            label="Continue"
+            secondary={true}
+            style={styles.btn}
+            onClick={this.continue}
+          />
         </React.Fragment>
       </MuiThemeProvider>
     );

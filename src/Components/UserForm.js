@@ -32,7 +32,6 @@ class UserForm extends Component {
 
   handleChange = input => e => {
     this.setState({ [input]: e.target.value });
-    console.log(input);
   };
 
   render() {
@@ -70,18 +69,30 @@ class UserForm extends Component {
       case 2:
         return (
           <PersonalDetails
-            nextStep={this.nextStep}
             handleChange={this.handleChange}
             values={values}
+            nextStep={this.nextStep}
             prevStep={this.prevStep}
           />
         );
       case 3:
-        return <Confirmation />;
+        return (
+          <Confirmation
+            values={values}
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+          />
+        );
       case 4:
         return <Success />;
       default:
-        return <UserDetails />;
+        return (
+          <UserDetails
+            nextStep={this.nextStep}
+            handleChange={this.handleChange}
+            values={values}
+          />
+        );
     }
   }
 }

@@ -20,7 +20,7 @@ class PersonalDetails extends Component {
     return (
       <MuiThemeProvider>
         <React.Fragment>
-          <AppBar title="Enter Personal Details" />
+          <AppBar title="Enter Personal Details" showMenuIconButton={false} />
           <TextField
             hintText="Enter Occupation"
             floatingLabelText="Occupation"
@@ -41,17 +41,17 @@ class PersonalDetails extends Component {
             onChange={handleChange("bio")}
             defaultValue={values.bio}
           />
-          
+
           <br />
           <RaisedButton
             label="Back"
-            primary={false}
+            secondary={false}
             style={styles.btn}
             onClick={this.back}
           />
           <RaisedButton
             label="Continue"
-            primary={true}
+            secondary={true}
             style={styles.btn}
             onClick={this.continue}
           />
