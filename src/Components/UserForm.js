@@ -3,7 +3,7 @@ import UserDetails from "./UserDetails";
 import PersonalDetails from "./PersonalDetails";
 import Success from "./Success";
 import Confirmation from "./Confirmation";
-
+import '../App.css';
 class UserForm extends Component {
   state = {
     firstName: "",
@@ -56,7 +56,7 @@ class UserForm extends Component {
       email,
       occupation
     };
-
+    
     switch (step) {
       case 1:
         return (
@@ -94,6 +94,7 @@ class UserForm extends Component {
           />
         );
     }
+    
   }
 }
 
